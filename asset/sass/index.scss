@@ -1,0 +1,27 @@
+body {
+    background: url(../asset/img/bg-homepage.jfif);
+    background-size: cover;
+}
+.home_page {
+
+    height: 100vh;
+    text-align: center;
+    a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        &:hover{
+            transform: scale(125%);
+            transition: 0.3s;
+        }
+    }
+    h1{
+        color: #198754;
+    }
+    .img{
+        width: 250px;
+        background-color: white;
+        border-radius: 8px;
+    }
+}
