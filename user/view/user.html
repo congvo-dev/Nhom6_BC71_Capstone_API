@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- fontawesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- user css -->
+    <link rel="stylesheet" href="/css/user.css" />
+  </head>
+
+  <body>
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <i class="fab fa-earlybirds"></i>
+            Tên shop</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <i class="fa fa-home"></i>
+                  Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fa fa-cog"></i>
+                  Admin</a
+                >
+              </li>
+              <li class="nav-item dropdown d-none">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item d-none">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Disabled</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2 d-none"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                id="button_cart"
+                class="btn btn-outline-light"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- offcanvas -->
+      <div
+        class="offcanvas offcanvas-start offcanvas-lg"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <table class="table table-border">
+            <thead class="text-center">
+                <th>Hình</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>SL</th>
+                <th>Tổng</th>
+                <th>Thao tác</th>
+            </thead>
+            <tbody id="tblDanhSachSP"></tbody>
+          </table>
+          </div>
+
+          <div class="dropdown mt-3 d-none">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+            >
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="banner">
+      <div class="container py-5">
+        <div class="row py-5 align-items-center">
+          <div class="col-lg-6 banner_left">
+            <h2>iPhone X | XR</h2>
+            <div class="d-flex star-rating mb-3">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-alt"></i>
+            </div>
+            <p class="">
+              iPhone X sử dụng tấm nền OLED (được tinh chỉnh bởi Apple) thay vì
+              LCD như những chiếc điện thoại iPhone trước đây và điều này đem
+              lại cho máy 1 màu đen thể hiện rất sâu cùng khả năng tái tạo màu
+              sắc không kém phần chính xác.
+            </p>
+            <h3>$1000</h3>
+            <button class="btn btn-success">Tìm hiểu thêm!</button>
+          </div>
+          <div class="col-lg-6 banner_right">
+            <img class="img-fluid" src="/asset/img/img_user/iphone-x-png-29489.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="show_product">
+      <div class="container py-5">
+        <select name="" id="chon_type" onchange="showType(event)">
+          <option value="All">Tất cả</option>
+          <option value="iphone">iPhone</option>
+          <option value="Samsung" >Samsung</option>
+        </select>
+        <div id="productShowcase" class="row"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-3">
+            <h3>
+              <i class="fab fa-earlybirds"></i>
+              Tên shop
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Possimus, optio. Iure obcaecati repellendus provident dolorum id
+              voluptate, ipsam sequi temporibus incidunt, veniam eius dolor,
+              sunt animi molestias nobis! Ad, culpa?
+            </p>
+          </div>
+          <div class="col-lg-3">
+            <h3>THƯƠNG HIỆU</h3>
+            <ul>
+              <li><a href="">iPhone</a></li>
+              <li><a href="">Samsung</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h3>LINK</h3>
+            <ul>
+              <li><a href="">Giá</a></li>
+              <li><a href="">Đặt hàng</a></li>
+              <li><a href="">Đối tác</a></li>
+              <li><a href="">Hỗ trợ</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3">
+            <h3>LIÊN HỆ</h3>
+            <ul>
+              <li>
+                <a href="">
+                  <i class="fab fa-facebook-square"></i>
+                  facebook.com
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fab fa-twitter-square"></i>
+                  twitter.com
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fa fa-phone-square"></i>
+                  999-999-999
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fab fa-youtube-square"></i>
+                  youtube.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!-- axios  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"
+      integrity="sha512-zJXKBryKlsiDaWcWQ9fuvy50SG03/Qc5SqfLXxHmk9XiUUbcD9lXYjHDBxLFOuZSU6ULXaJ69bd7blSMEgxXNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- user model js -->
+    <script src="../model/model_user.js"></script>
+    <!-- user controller js -->
+    <script src="../controller/controller_user.js"></script>
+    <!-- user main js -->
+    <script src="../controller/user.js"></script>
+  </body>
+</html>
