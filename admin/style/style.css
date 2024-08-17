@@ -5,7 +5,7 @@
 }
 
 #productModal .modal-header {
-    background-color: #007bff;
+    background-color: #198754;
     color: #fff;
     border-bottom: none;
     border-top-left-radius: 8px;
@@ -43,7 +43,7 @@
 }
 
 #productModal .modal-footer .btn-primary {
-    background-color: #007bff;
+    background-color: #198754;
     border: none;
 }
 
@@ -88,7 +88,7 @@
 .btn-action button {
     border: none;
     background: none;
-    color: #007bff;
+    color: #198754;
     cursor: pointer;
 }
 
@@ -98,7 +98,7 @@
 
 /* Create Button Styles */
 #createProductButton {
-    background-color: #007bff;
+    background-color: #198754;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -109,7 +109,7 @@
 }
 
 #createProductButton:hover {
-    background-color: #0056b3;
+    background-color: #157347;
 }
 
 /* Search and Filter Styles */
