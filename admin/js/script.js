@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function fetchProducts() {
-        axios.get('https://66b5bad3b5ae2d11eb647083.mockapi.io/api/test/Product')
+        axios.get('https://66b203db1ca8ad33d4f6247d.mockapi.io/product')
             .then(response => {
                 products = response.data;
                 renderProducts(products);
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     
         if (id) {
-            axios.put(`https://66b5bad3b5ae2d11eb647083.mockapi.io/api/test/Product/${id}`, productData)
+            axios.put(`https://66b203db1ca8ad33d4f6247d.mockapi.io/product/${id}`, productData)
                 .then(response => {
                     fetchProducts();
                     $('#productModal').modal('hide'); // Use jQuery to hide the modal
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('There was an error updating the product!', error);
                 });
         } else {
-            axios.post('https://66b5bad3b5ae2d11eb647083.mockapi.io/api/test/Product', productData)
+            axios.post('https://66b203db1ca8ad33d4f6247d.mockapi.io/product', productData)
                 .then(response => {
                     fetchProducts();
                     $('#productModal').modal('hide'); // Use jQuery to hide the modal
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     function deleteProduct(id) {
-        axios.delete(`https://66b5bad3b5ae2d11eb647083.mockapi.io/api/test/Product/${id}`)
+        axios.delete(`https://66b203db1ca8ad33d4f6247d.mockapi.io/product/${id}`)
             .then(response => {
                 fetchProducts();
             })
