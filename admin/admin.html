@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <a href="../index.html" class="btn btn-secondary">Back to Index</a>
+      <h3>Product Dashboard</h3>
+      <div class="mb-3"></div>
+      <div class="mb-3 d-flex align-items-center">
+        <button
+          style="margin-right: 15px"
+          type="button"
+          class="btn btn-success"
+          id="createProductButton"
+        >
+          Create New Product
+        </button>
+        <div style="margin-right: 15px" class="mr-3">
+          <label for="priceFilter">Filter by Price:</label>
+          <select id="priceFilter" class="form-control">
+            <option value="">No Sort</option>
+            <option value="asc">Price Low to High</option>
+            <option value="desc">Price High to Low</option>
+          </select>
+        </div>
+        <div>
+          <label for="searchBox">Search by Name:</label>
+          <input
+            type="text"
+            id="searchBox"
+            class="form-control"
+            placeholder="Enter product name..."
+          />
+        </div>
+      </div>
+
+      <!-- Products Table -->
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Screen</th>
+            <th>Back Camera</th>
+            <th>Front Camera</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+      </table>
+    </div>
+
+    <div
+      class="modal fade"
+      id="productModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel">Product Form</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="productForm">
+              <input type="hidden" id="productId" />
+              <div class="form-group">
+                <label for="productName">Name</label>
+                <input
+                  type="text"
+                  id="productName"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="productPrice">Price</label>
+                <input
+                  type="number"
+                  id="productPrice"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="productScreen">Screen</label>
+                <input
+                  type="text"
+                  id="productScreen"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="productBackCamera">Back Camera</label>
+                <input
+                  type="text"
+                  id="productBackCamera"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="productFrontCamera">Front Camera</label>
+                <input
+                  type="text"
+                  id="productFrontCamera"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="productImage">Image URL</label>
+                <input
+                  type="text"
+                  id="productImage"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="productDesc">Description</label>
+                <textarea
+                  id="productDesc"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="productType">Type</label>
+                <input
+                  type="text"
+                  id="productType"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="form-group d-flex justify-content-center mt-3">
+                <button type="submit" class="btn btn-success">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+  integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+  crossorigin="anonymous"
+></script>
+<!-- axios  -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.3/axios.min.js"
+  integrity="sha512-zJXKBryKlsiDaWcWQ9fuvy50SG03/Qc5SqfLXxHmk9XiUUbcD9lXYjHDBxLFOuZSU6ULXaJ69bd7blSMEgxXNQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<!-- user main js -->
+<script src="./js/script.js"></script>
