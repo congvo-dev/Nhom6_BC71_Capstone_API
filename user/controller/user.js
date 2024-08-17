@@ -160,7 +160,7 @@ function renderCart() {
             <td>
                 <div class="d-flex">
                 <button class="btn" onclick="minusSL(${i},${product.sl})">-</button>
-                <input id="soLuong" type="number" class="" value="${product.sl}"/>
+                <input id="soLuong" type="text" class="" value="${product.sl}"/>
                 <button class="btn" onclick="plusSL(${i},${product.sl})">+</button>
 
                 </div>
