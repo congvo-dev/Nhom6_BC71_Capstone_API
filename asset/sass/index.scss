@@ -15,6 +15,9 @@ body {
             transform: scale(125%);
             transition: 0.3s;
         }
+        .item{
+            align-items: center;
+        }
     }
     h1{
         color: #198754;
